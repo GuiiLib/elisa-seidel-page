@@ -1,0 +1,36 @@
+<section class="agenda-container">
+  <h3>
+    <fa-icon [icon]="faCalendarDays"></fa-icon> Agenda da Semana
+  </h3>
+  
+  @if(allEvents.length > 0){
+    @for(group of (groupedEvents | keyvalue); track group.key){
+      <div class="day-group">
+        <div class="day-header">
+          <span class="weekday">{{ group.value[0].date | date:'EEEE':'pt-BR' }}</span>
+          <span class="date">{{ group.value[0].date | date:'dd MMM':'pt-BR' | uppercase }}</span>
+        </div>
+        
+        <div class="events-list">
+          @for(event of group.value; track $index){
+            <div class="event-item" [ngClass]="'event-' + event.type">
+              <div class="event-icon">
+                @if(event.type === 'live'){ <fa-icon [icon]="faVideo"></fa-icon> }
+                @if(event.type === 'offline'){ <fa-icon [icon]="faPowerOff"></fa-icon> }
+                @if(event.type === 'event'){ <fa-icon [icon]="faStar"></fa-icon> }
+              </div>
+              <div class="event-details">
+                <p class="event-title">{{ event.title }}</p>
+                @if(event.description){
+                  <p class="event-description">{{ event.description }}</p>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  } @else {
+    <p class="no-events">Nenhum evento agendado para esta semana. Fique de olho nas redes sociais!</p>
+  }
+</section>

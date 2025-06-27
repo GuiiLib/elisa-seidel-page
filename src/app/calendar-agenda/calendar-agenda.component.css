@@ -1,0 +1,105 @@
+:host {
+  --primary-color: #9147ff;
+  --background-color: #18181b;
+  --surface-color: #2a2a2e;
+  --text-color: #efeff1;
+  --text-muted-color: #a8a8a8;
+  --live-color: #5cb85c; /* Verde para lives */
+  --offline-color: #d9534f; /* Vermelho para offline */
+  --event-color: #f0ad4e; /* Laranja para eventos especiais */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.agenda-container {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.agenda-container h3 {
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--primary-color);
+}
+
+.day-group {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--surface-color);
+}
+
+.day-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.weekday {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.date {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted-color);
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  border-left: 4px solid; /* Borda colorida baseada no tipo */
+}
+
+/* Estilos específicos por tipo de evento */
+.event-live { border-color: var(--live-color); }
+.event-offline { border-color: var(--offline-color); }
+.event-event { border-color: var(--event-color); }
+
+.event-live .event-icon { color: var(--live-color); }
+.event-offline .event-icon { color: var(--offline-color); }
+.event-event .event-icon { color: var(--event-color); }
+
+.event-icon {
+  font-size: 1.5rem;
+}
+
+.event-details p {
+  margin: 0;
+}
+
+.event-title {
+  font-weight: 600;
+}
+
+.event-offline .event-title {
+  text-decoration: line-through;
+  color: var(--text-muted-color);
+}
+
+.event-description {
+  font-size: 0.9rem;
+  color: var(--text-muted-color);
+  margin-top: 0.25rem;
+}
+
+.no-events {
+  text-align: center;
+  color: var(--text-muted-color);
+  padding: 2rem;
+}

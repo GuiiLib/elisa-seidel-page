@@ -1,0 +1,49 @@
+<section class="about-me-container">
+  <div class="left-column">
+    <img src="assets/imgs/perfil.png" alt="Foto de {{ streamerName }}" class="profile-picture">
+    <h2>{{ streamerName }}</h2>
+    <p class="introduction">{{ introduction }}</p>
+    <div class="social-links">
+  <a href="https://www.twitch.tv/elisaseidel" target="_blank" title="Twitch"><fa-icon [icon]="faTwitch"></fa-icon></a>
+  
+  <a href="https://www.youtube.com/@elisaseidel" target="_blank" title="YouTube"><fa-icon [icon]="faYoutube"></fa-icon></a>
+  
+  <a href="https://instagram.com/elisaseidel" target="_blank" title="Instagram"><fa-icon [icon]="faInstagram"></fa-icon></a>
+  <a href="mailto:contatoseidelelisa@gmail.com" title="E-mail"><fa-icon [icon]="faEnvelope"></fa-icon></a>
+</div>
+  </div>
+
+  <div class="right-column">
+    <div class="info-card">
+      <h3><fa-icon [icon]="faGamepad"></fa-icon> Hobbies & Interesses</h3>
+      <div class="hobbies-list">
+        @for(hobby of hobbies; track hobby.text){
+          <span>{{ hobby.text }}</span>
+        }
+      </div>
+    </div>
+
+    <div class="info-card">
+        <h3><fa-icon [icon]="faCalendarAlt"></fa-icon> Minha Jornada</h3>
+        <p>Na Twitch desde <strong>{{ milestones.twitchSince }}</strong> e no YouTube desde <strong>{{ milestones.youtubeSince }}</strong>. Sempre aprendendo e evoluindo com vocês!</p>
+    </div>
+    
+    <div class="info-card">
+      <h3><fa-icon [icon]="faBullseye"></fa-icon> Objetivos</h3>
+      <p>{{ goals }}</p>
+    </div>
+
+    <div class="info-card">
+      <h3><fa-icon [icon]="faDesktop"></fa-icon> Meu Setup</h3>
+      <div class="setup-grid">
+        @for(item of setup; track item.name){
+          <div class="setup-item">
+            <fa-icon [icon]="item.icon"></fa-icon>
+            <strong>{{ item.name }}:</strong> {{ item.description }}
+          </div>
+        }
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -125,22 +125,25 @@
 @media (max-width: 800px) {
   /* No celular, o botão hamburger aparece */
   .mobile-menu-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1050;
-    width: 50px;
-    height: 50px;
-    background-color: #18181b;
-    color: #efeff1;
-    border: 1px solid #3a3a3d;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* --- ESTAS 4 LINHAS SÃO A CHAVE --- */
+  position: fixed; /* Faz o botão flutuar sobre a página */
+  top: 15px;       /* Distância do topo */
+  left: 15px;      /* Distância da esquerda */
+  z-index: 1050;   /* Garante que ele fique na frente de tudo */
+
+  width: 50px;
+  height: 50px;
+  background-color: #18181b;
+  color: #efeff1;
+  border: 1px solid #3a3a3d;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
 
   /* No celular, o botão de expandir/encolher some */
   .sidebar .toggle-button {

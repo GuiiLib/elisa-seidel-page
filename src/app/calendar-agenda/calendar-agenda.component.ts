@@ -33,7 +33,7 @@ export class CalendarAgendaComponent implements OnInit {
     // ---- A CORREÇÃO ESTÁ AQUI ----
     // Tipamos explicitamente o array de dados como 'CalendarEvent[]'
     const eventData: CalendarEvent[] = [
-      { date: this.getDate(today, 0), type: 'live', title: 'Live de Reações e Bate-papo', description: 'Vamos ver os vídeos da semana! - 20h' },
+      { date: this.getDate(today, 0), type: 'live', title: 'LIVE ANIVERSÁRIO!', description: 'Vamos de SUBATHON DE ANIVERSÁRIO! Jogar e abrir presentes! - 19h' },
       { date: this.getDate(today, 1), type: 'offline', title: 'Dia de Descanso / Offline' },
       { date: this.getDate(today, 2), type: 'live', title: 'Gameplay do Jogo Novo!', description: 'Zerando o lançamento do mês - 19h' },
       { date: this.getDate(today, 3), type: 'live', title: 'Live com Convidados Especiais (Comedy)', description: 'Gameplay em dupla com papangu - 21h' },

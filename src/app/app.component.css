@@ -1,0 +1,16 @@
+/* Define as variáveis de largura para uso no padding */
+:host {
+  --sidebar-collapsed-width: 80px;
+  --sidebar-expanded-width: 240px;
+}
+
+.main-content {
+  /* Padding inicial para a sidebar minimizada */
+  padding-left: var(--sidebar-collapsed-width);
+  transition: padding-left 0.3s ease-in-out;
+}
+
+/* Quando o app-container tem a classe .sidebar-expanded, o padding aumenta */
+.app-container.sidebar-expanded .main-content {
+  padding-left: var(--sidebar-expanded-width);
+}

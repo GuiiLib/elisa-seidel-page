@@ -1,0 +1,21 @@
+<div style="display: flex; gap: 16px; margin-bottom: 2rem;">
+  <div style="flex-grow: 1;">
+    <app-twitch-player [channel]="twitchChannel"></app-twitch-player>
+  </div>
+  </div>
+
+<div style="margin-bottom: 2rem;">
+  <app-instagram-carousel 
+      [posts]="streamerInstaPosts"
+      [profileUsername]="streamerUsername"
+      [instagramProfileUrl]="instagramProfileUrl">
+  </app-instagram-carousel>
+</div>
+
+<section class="youtube-section">
+  <app-youtube-carousel
+    [videos]="youtubeVideos"
+    [channelName]="youtubeChannelName"
+    [channelUrl]="youtubeChannelUrl">
+  </app-youtube-carousel>
+</section>

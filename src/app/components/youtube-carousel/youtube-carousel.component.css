@@ -1,0 +1,116 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --yt-red: #FF0000;
+  --yt-border-color: #ddd;
+  --yt-bg-color: #f9f9f9;
+  --yt-text-primary: #030303;
+  --yt-text-secondary: #606060;
+}
+
+.youtube-container {
+  max-width: 100%;
+  padding: 1.5rem;
+  background-color: var(--yt-bg-color);
+  border: 1px solid var(--yt-border-color);
+  border-radius: 12px;
+}
+
+.channel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.channel-info h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--yt-text-secondary);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.channel-info a {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--yt-text-primary);
+  text-decoration: none;
+}
+
+.subscribe-button {
+  background-color: var(--yt-red);
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #cc0000;
+}
+
+swiper-container {
+  width: 100%;
+}
+
+swiper-slide {
+  width: 250px;
+}
+
+.video-card {
+  display: block;
+  text-decoration: none;
+}
+
+.thumbnail-wrapper {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.thumbnail-wrapper img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover .thumbnail-wrapper img {
+  transform: scale(1.05);
+}
+
+.play-icon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-card:hover .play-icon-overlay {
+  opacity: 1;
+}
+
+.play-icon {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.video-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--yt-text-primary);
+  margin: 0;
+}

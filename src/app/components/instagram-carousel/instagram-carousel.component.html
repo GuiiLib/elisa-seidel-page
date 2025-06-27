@@ -1,0 +1,31 @@
+<div class="instagram-container">
+  <header class="profile-header">
+    <div class="profile-info">
+      <h4>Instagram</h4>
+      <a [href]="instagramProfileUrl" target="_blank" rel="noopener noreferrer">
+        &#64;{{ profileUsername }}
+      </a>
+    </div>
+    <a [href]="instagramProfileUrl" class="follow-button" target="_blank" rel="noopener noreferrer">
+      Seguir
+    </a>
+  </header>
+
+  <swiper-container 
+      [slidesPerView]="'auto'" 
+      [spaceBetween]="15"
+      [pagination]="{ clickable: true }">
+    
+    @for (post of posts; track $index) {
+      <swiper-slide>
+        <a [href]="post.postUrl" class="post-card" target="_blank" rel="noopener noreferrer">
+          <img [src]="post.imageUrl" alt="Instagram Post" loading="lazy">
+          <div class="post-overlay">
+            <span class="post-stats">
+              ❤️ {{ post.likes }} &nbsp;&nbsp; 💬 {{ post.comments }}
+            </span>
+          </div>
+        </a>
+      </swiper-slide>
+    } </swiper-container>
+</div>

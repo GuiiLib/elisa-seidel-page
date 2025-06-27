@@ -1,40 +1,51 @@
-<nav class="sidebar" [class.expanded]="isExpanded">
+<button class="mobile-menu-button" (click)="toggleMobileMenu()">
+  <fa-icon [icon]="faBars"></fa-icon>
+</button>
+
+<nav class="sidebar" 
+     [class.expanded]="isExpanded" 
+     [class.mobile-open]="isMobileMenuOpen">
+
   <div class="sidebar-header">
     <img src="assets/logo.png" alt="Logo" class="sidebar-logo">
-    <button class="toggle-button" (click)="toggleSidebar()">
+    <button class="toggle-button" (click)="toggleDesktopSidebar()">
       <fa-icon [icon]="isExpanded ? faChevronLeft : faChevronRight"></fa-icon>
     </button>
   </div>
 
   <ul class="nav-list">
     <li>
-      <a routerLink="/home" title="Home">
+      <a routerLink="/home" title="Home" (click)="closeMenuOnNavigate()">
         <fa-icon [icon]="faHouse"></fa-icon>
         <span class="link-text">Home</span>
       </a>
     </li>
     <li>
-      <a routerLink="/about-me" title="Perfil">
+      <a routerLink="/about-me" title="Sobre Mim" (click)="closeMenuOnNavigate()">
         <fa-icon [icon]="faUser"></fa-icon>
         <span class="link-text">Sobre mim</span>
       </a>
     </li>
     <li>
-      <a routerLink="/calendar" title="Eventos">
+      <a routerLink="/calendar" title="Agenda" (click)="closeMenuOnNavigate()">
         <fa-icon [icon]="faCalendar"></fa-icon>
         <span class="link-text">Agenda</span>
       </a>
     </li>
-
+    <li>
+      <a routerLink="/medals" title="Medalhas" (click)="closeMenuOnNavigate()">
+        <fa-icon [icon]="faMedal"></fa-icon>
+        <span class="link-text">Medalhas</span>
+      </a>
+    </li>
     <li class="push-to-bottom">
-      <a routerLink="/settings" title="Configurações">
+      <a routerLink="/settings" title="Configurações" (click)="closeMenuOnNavigate()">
         <fa-icon [icon]="faGear"></fa-icon>
         <span class="link-text">Configurações</span>
       </a>
     </li>
-    
     <li>
-      <a href="contatoseidelelisa@gmail.com" title="Contato por E-mail">
+      <a href="mailto:contatoseidelelisa@gmail.com" title="Contato por E-mail">
         <fa-icon [icon]="faEnvelope"></fa-icon>
         <span class="link-text">Contato</span>
       </a>

@@ -54,7 +54,7 @@ export class AboutMeComponent {
 
   // --- DADOS REAIS DA STREAMER ---
   streamerName = "Elisa Seidel";
-  introduction = "Oie! Sejam bem vindos 🌶️ Sou a Elisa Seidel, tenho 26 anos, sou publicitária e apaixonada por games, tô no YouTube desde 2014 e carrego comigo esse sonho de entreter a galera através das minhas gameplays um tanto quanto criminosas e divertidas! Espero que gostem e passem muito tempo comigo por aqui. 💜";
+  introduction = "Oie! Sejam bem vindos 🌶️ Sou a Elisa Seidel, tenho 27 anos, sou publicitária e apaixonada por games, tô no YouTube desde 2014 e carrego comigo esse sonho de entreter a galera através das minhas gameplays um tanto quanto criminosas e divertidas! Espero que gostem e passem muito tempo comigo por aqui. 💜";
   
   // Mantive sugestões para ela preencher no futuro
   hobbies = [

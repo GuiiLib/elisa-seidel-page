@@ -1,0 +1,26 @@
+<section class="medals-page-container">
+  <div class="redeem-section info-card">
+    <h3>
+      <fa-icon [icon]="faTicketAlt"></fa-icon> Resgatar Medalha
+    </h3>
+    <p>Ganhou um código de medalha especial em uma live? Resgate seu prêmio aqui!</p>
+    <div class="redeem-form">
+      <input type="text" [(ngModel)]="redeemCode" placeholder="Digite o código da medalha">
+      <button (click)="redeemMedal()">Resgatar</button>
+    </div>
+  </div>
+
+  <div class="gallery-section info-card">
+    <h3>
+      <fa-icon [icon]="faTrophy"></fa-icon> Todas as Medalhas
+    </h3>
+    <div class="medals-grid">
+      @for(medal of allMedals; track medal.name){
+        <div class="medal-item" [class.unlocked]="medal.unlocked" [title]="medal.description">
+          <img [src]="medal.imageUrl" [alt]="medal.name">
+          <span class="medal-name">{{ medal.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

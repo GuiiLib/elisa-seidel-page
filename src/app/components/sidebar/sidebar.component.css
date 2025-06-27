@@ -1,7 +1,12 @@
 :host {
   --sidebar-collapsed-width: 80px;
   --sidebar-expanded-width: 240px;
+  --sidebar-mobile-width: 280px;
 }
+
+/* ====================================================== */
+/* --- ESTILOS PADRÃO (DESKTOP) --- */
+/* ====================================================== */
 
 .sidebar {
   position: fixed;
@@ -11,11 +16,9 @@
   height: 100vh;
   background-color: #18181b;
   color: #efeff1;
-  overflow-x: hidden; /* Mudei para overflow-x para evitar barras de rolagem indesejadas */
+  overflow-x: hidden;
   width: var(--sidebar-collapsed-width);
   transition: width 0.3s ease-in-out;
-
-  /* Transforma a sidebar em um container flexível vertical */
   display: flex;
   flex-direction: column;
 }
@@ -30,7 +33,6 @@
   justify-content: flex-end;
   padding: 1rem;
   position: relative;
-  /* Garante que o header não encolha */
   flex-shrink: 0;
 }
 
@@ -46,7 +48,14 @@
   opacity: 1;
 }
 
+/* No desktop, o botão 'hamburger' não aparece */
+.mobile-menu-button {
+  display: none;
+}
+
+/* No desktop, o botão de expandir/encolher aparece */
 .toggle-button {
+  display: block;
   background: none;
   border: none;
   color: #efeff1;
@@ -56,26 +65,22 @@
   right: 28px;
 }
 
-/* Estilo da nossa nova lista unificada */
 .nav-list {
   list-style-type: none;
   padding: 0 1.5rem;
   margin: 1rem 0;
-  /* Faz a lista crescer para ocupar o espaço vertical disponível */
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* O truque do Flexbox para empurrar o item para o final */
 .nav-list .push-to-bottom {
   margin-top: auto;
-  border-top: 1px solid #3a3a3d; /* Adiciona uma linha separadora limpa */
+  border-top: 1px solid #3a3a3d;
   padding-top: 1rem;
   margin-bottom: 0.5rem;
 }
 
-/* UM ÚNICO SELETOR PARA GOVERNAR TODOS OS LINKS */
 .nav-list li a {
   display: flex;
   align-items: center;
@@ -85,9 +90,9 @@
   border-radius: 8px;
   transition: background-color 0.2s ease;
   white-space: nowrap;
+  overflow: hidden;
 }
 
-/* UM ÚNICO SELETOR DE HOVER */
 .nav-list li a:hover {
   background-color: #3a3a3d;
 }
@@ -97,14 +102,67 @@
   min-width: 28px;
   text-align: center;
   flex-shrink: 0;
+  opacity: 1; /* Garante que ícones estejam sempre visíveis */
 }
 
+/* No desktop, o texto some por padrão */
 .link-text {
   margin-left: 1rem;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
 
+/* No desktop, o texto só aparece quando expandido */
 .sidebar.expanded .link-text {
   opacity: 1;
+}
+
+
+/* ====================================================== */
+/* --- AJUSTES PARA TELAS PEQUENAS (MOBILE) --- */
+/* ====================================================== */
+
+@media (max-width: 800px) {
+  /* No celular, o botão hamburger aparece */
+  .mobile-menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1050;
+    width: 50px;
+    height: 50px;
+    background-color: #18181b;
+    color: #efeff1;
+    border: 1px solid #3a3a3d;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* No celular, o botão de expandir/encolher some */
+  .sidebar .toggle-button {
+    display: none;
+  }
+
+  /* No celular, a sidebar fica escondida por padrão */
+  .sidebar {
+    width: var(--sidebar-mobile-width);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1002;
+  }
+
+  /* E só aparece quando a classe .mobile-open é adicionada */
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  /* No celular, o texto dos links e a logo sempre aparecem */
+  .sidebar .link-text,
+  .sidebar .sidebar-logo {
+    opacity: 1;
+  }
 }
